@@ -60,19 +60,17 @@ func Day3(input []string) int {
 			} else {
 				if num > 0 {
 					//check if [start,end] is adjacent to any special char
-                    //for part1: out:
-                    var prev rune
+                    out:
 					for i := start; i <= end; i++ {
 						adjs := adjList(&Loc{ri, i})
 						for _, adj := range adjs {
-							if mp[adj] != nil && prev != special_chars[adj]{
-
+							if mp[adj] != nil && special_chars[adj] == '*'{
                                 v := mp[adj]
                                 v = append(v, num)
                                 mp[adj] = v
 
-                                prev = special_chars[adj] //to avoid counting of same num more than one for the same special char
-                                //for part1: sum += num; break out
+                                //for part1: sum += num
+                                break out
 							}
 						}
 					}
