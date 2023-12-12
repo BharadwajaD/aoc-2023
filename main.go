@@ -19,8 +19,7 @@ func read_input(file string) []string {
 	return strings.Split(input_str, "\n")
 }
 
-
 func main() {
 	input := read_input("./input")
-    fmt.Println(day.Day3(input))
+	fmt.Println(day.Day4(input))
 }
