@@ -40,5 +40,5 @@ func main() {
 	input := read_input("./input")
 	tend := time.Now()
 
-	fmt.Println(day.Day6(input),tend.Sub(tstart))
+	fmt.Println(day.Day7(input), tend.Sub(tstart))
 }
