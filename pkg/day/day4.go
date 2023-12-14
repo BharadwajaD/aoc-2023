@@ -93,7 +93,9 @@ func CardFromString(str string) Card {
 }
 
 
-func Day4(input []string) int {
+func Day4(inp string) int {
+
+    input := strings.Split(inp, "\n")
 	var sum int
 	scores_mp := make(map[int]int)
 

@@ -53,7 +53,9 @@ func GameFromString(str string) *Game {
 	return game
 }
 
-func Day2(input []string) int {
+func Day2(inp string) int {
+
+    input := strings.Split(inp, "\n")
 
 	var sum int
 	for _, line := range input[:len(input)-1] {

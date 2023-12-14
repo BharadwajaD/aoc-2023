@@ -79,7 +79,10 @@ func (r *Race) winning_ways_count() int {
 	return end - start + 1
 }
 
-func Day6(input []string) int{
+func Day6(inp string) int {
+
+    input := strings.Split(inp, "\n")
+
 	times := strings.Split(input[0], ":")[1]
 	distances := strings.Split(input[1], ":")[1]
 

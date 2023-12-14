@@ -64,6 +64,8 @@ func bidFromString(str string) Bid {
 		return cnts[i] > cnts[j]
 	})
 
+    //for part 2
+    //TODO: Understand this
     if len(cnts) == 0 {
         cnts = append(cnts, 5)
     } else {
@@ -113,7 +115,10 @@ func compare_bid(hd1, hd2 Bid) bool {
 
 	return hd1.ctype < hd2.ctype
 }
-func Day7(input []string) int {
+
+func Day7(inp string) int {
+
+    input := strings.Split(inp, "\n")
 
 	var bids []Bid
 	for _, line := range input[:len(input)-1] {

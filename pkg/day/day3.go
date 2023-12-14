@@ -1,5 +1,7 @@
 package day
 
+import "strings"
+
 type Loc struct {
 	x int
 	y int
@@ -28,7 +30,9 @@ func isSpecialChar(c rune) bool {
 	return !isDigit(c) && c != '.'
 }
 
-func Day3(input []string) int {
+func Day3(inp string) int {
+
+    input := strings.Split(inp, "\n")
 
 	var sum int
 	var num int

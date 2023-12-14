@@ -2,8 +2,6 @@ package day
 
 import (
 	"fmt"
-	"log"
-	"os"
 	"slices"
 	"strconv"
 	"strings"
@@ -56,15 +54,9 @@ func reverse_mapped_to(num int, trans []string) int {
 	return num
 }
 
-func Day5(){
-	input, err := os.ReadFile("./input")
+func Day5(inp string) int {
 
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	input_str := string(input)
-	trans_blocks := strings.Split(input_str, "\n\n")
+	trans_blocks := strings.Split(inp, "\n\n")
 
 	seeds := intsFromString(strings.Split(trans_blocks[0], ":")[1])
 
@@ -90,13 +82,6 @@ func Day5(){
 
 	slices.Reverse(converts)
 
-    //optimisation:
-    //1. sorting seeds
-    //2. using go routines
-
-    go func(){
-    }()
-
 	for {
 		s = l
 		for _, t := range converts {
@@ -108,26 +93,10 @@ func Day5(){
 		for i := 0; i < len(seeds); i += 2 {
 			if s > seeds[i] && s < seeds[i]+seeds[i+1] {
 				fmt.Println(l)
-				return
+				return l
 			}
 		}
 
 		l++
 	}
-	/*
-		    for loc := 0; loc < math.MaxInt; loc ++ {
-		        search_for := loc
-		        for i := 6; i >= 0; i-- {
-		            search_for = reverse_mapped_to(search_for, converts[i])
-		        }
-
-		        //if this loc has a valid seed then return it
-		        for i := 0; i < len(seeds); i += 2 {
-		            if search_for >= seeds[i] && search_for < seeds[i] + seeds[i+1] {
-			            fmt.Println(loc)
-		                return
-		            }
-		        }
-		    }
-	*/
 }

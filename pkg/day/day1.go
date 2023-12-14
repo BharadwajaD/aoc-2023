@@ -22,7 +22,9 @@ func get_indexes(str, substr string) []int {
 
 var nums map[string]int
 
-func Day1(input []string) int {
+func Day1(inp string) int {
+
+    input := strings.Split(inp, "\n")
 
 	nums = map[string]int{
 		"zero":  0,

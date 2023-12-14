@@ -6,7 +6,7 @@ import (
 	"os"
 	"strconv"
 	"strings"
-	"theTechTrailBlazer/aoc/day"
+	"theTechTrailBlazer/aoc/pkg/day"
 	"time"
 )
 
@@ -40,5 +40,7 @@ func main() {
 	input := read_input("./input")
 	tend := time.Now()
 
-	fmt.Println(day.Day7(input), tend.Sub(tstart))
+
+	fmt.Println(day.Day8(input),tend.Sub(tstart))
+
 }
