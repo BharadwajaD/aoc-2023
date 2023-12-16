@@ -14,10 +14,11 @@ type AOC struct{
     input string
 }
 
+//this will be created for each request
 func NewAOC(day, part int, input string) AOC {
     return AOC{
         day: day,
-        part: part,
+        part: 1,
     }
 }
 
