@@ -6,7 +6,7 @@ import (
 	"os"
 	"strconv"
 	"strings"
-	"theTechTrailBlazer/aoc/pkg/server"
+	"theTechTrailBlazer/aoc/pkg/day"
 	"time"
 )
 
@@ -37,11 +37,9 @@ func intsFromString(str string) []int {
 func main() {
 
 	tstart := time.Now()
-	input := read_input("./test")
+	input := read_input("./input")
 	tend := time.Now()
 
-
-	fmt.Println(input,tend.Sub(tstart))
-    server.Server()
+	fmt.Println(day.Day9(input),tend.Sub(tstart))
 
 }
