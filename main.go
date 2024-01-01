@@ -33,6 +33,35 @@ func intsFromString(str string) []int {
 	return nums
 }
 
+type Location struct {
+	row, col int
+}
+
+func add_pipe(adjList map[Location][]Location, loc Location, c rune) {
+
+	row := loc.row
+	col := loc.col
+	var locs []Location
+
+	switch c {
+	case '|':
+		locs = []Location{{row: row - 1, col: col}, {row: row + 1, col: col}}
+	case '-':
+		locs = []Location{{row: row , col: col-1}, {row: row, col: col+1}}
+	case 'L':
+		locs = []Location{{row: row-1 , col: col}, {row: row, col: col+1}}
+	case 'J':
+		locs = []Location{{row: row-1 , col: col}, {row: row, col: col-1}}
+	case '7':
+		locs = []Location{{row: row+1 , col: col}, {row: row, col: col-1}}
+	case 'F':
+		locs = []Location{{row: row+1 , col: col}, {row: row, col: col+1}}
+	case 'S':
+		locs = []Location{{row: row-1 , col: col-1},{row: row+1 , col: col},{row: row+1 , col: col}, {row: row, col: col+1}}
+	}
+
+	adjList[loc] = append(adjList[loc], locs...)
+}
 
 func main() {
 
@@ -40,6 +69,6 @@ func main() {
 	input := read_input("./input")
 	tend := time.Now()
 
-	fmt.Println(day.Day9(input),tend.Sub(tstart))
+	fmt.Println(day.Day9(input), tend.Sub(tstart))
 
 }
